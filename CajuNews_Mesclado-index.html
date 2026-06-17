@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Caju News</title>
+<title>CAJU NEWS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -15,128 +17,130 @@
 }
 
 body{
-    font-family:Arial, sans-serif;
-    background:#f4f4f4;
-    color:#333;
-}
-
-header{
-    background:#0f6d2c;
-    color:white;
-    text-align:center;
-    padding:50px 20px;
-}
-
-header h1{
-    font-size:3rem;
-}
-
-header p{
-    margin-top:10px;
-}
-
-nav{
-    background:#0b4f20;
-    padding:15px;
-    text-align:center;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 15px;
-    font-weight:bold;
+    background:#f7f4ec;
+    color:#111;
+    font-family:'Source Sans 3',sans-serif;
 }
 
 .container{
     max-width:1200px;
     margin:auto;
-    padding:30px;
+    padding:20px;
 }
 
-.destaque{
-    background:white;
-    padding:30px;
-    border-radius:10px;
+header{
+    text-align:center;
+    border-top:4px solid #111;
+    border-bottom:4px solid #111;
+    padding:20px 0;
+    margin-bottom:30px;
+}
+
+header h1{
+    font-family:'Playfair Display',serif;
+    font-size:4rem;
+    letter-spacing:3px;
+}
+
+header p{
+    font-size:0.95rem;
+    text-transform:uppercase;
+}
+
+.editorial{
+    text-align:center;
+    font-style:italic;
+    margin-bottom:30px;
+    padding:15px;
+    border-bottom:1px solid #ccc;
+}
+
+.manchete{
     margin-bottom:40px;
-    box-shadow:0 2px 10px rgba(0,0,0,.1);
 }
 
 .tag{
     display:inline-block;
     background:#0f6d2c;
     color:white;
-    padding:6px 12px;
-    border-radius:5px;
+    padding:5px 12px;
     font-size:0.8rem;
     font-weight:bold;
+    margin-bottom:15px;
 }
 
-.destaque h2{
-    margin-top:15px;
-    font-size:2rem;
-    color:#0f6d2c;
+.manchete h2{
+    font-family:'Playfair Display',serif;
+    font-size:3rem;
+    line-height:1.1;
+    margin-bottom:15px;
 }
 
-.destaque p{
-    margin-top:15px;
-    line-height:1.7;
+.subtitulo{
+    font-size:1.2rem;
+    color:#444;
+    margin-bottom:20px;
 }
 
-.grid{
+.colunas{
+    column-count:2;
+    column-gap:40px;
+    text-align:justify;
+    line-height:1.8;
+}
+
+.grade{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+    margin-top:40px;
 }
 
-.card{
+.materia{
     background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    border:1px solid #d8d8d8;
+    padding:20px;
     cursor:pointer;
-    transition:.3s;
+    transition:0.3s;
 }
 
-.card:hover{
-    transform:translateY(-5px);
+.materia:hover{
+    transform:translateY(-4px);
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
 }
 
-.card h3{
+.materia span{
     color:#0f6d2c;
-    margin-bottom:10px;
+    font-size:0.8rem;
+    font-weight:bold;
+    text-transform:uppercase;
 }
 
-.card p{
-    color:#666;
+.materia h3{
+    font-family:'Playfair Display',serif;
+    margin:10px 0;
 }
 
 footer{
-    margin-top:50px;
-    background:#0f6d2c;
-    color:white;
     text-align:center;
-    padding:30px;
+    margin-top:50px;
+    padding:20px;
+    border-top:2px solid #111;
 }
-
-/* Modal */
 
 .modal{
     display:none;
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.7);
-    z-index:999;
+    background:rgba(0,0,0,.75);
     overflow:auto;
 }
 
-.modal-conteudo{
+.modal-box{
     background:white;
-    width:90%;
     max-width:900px;
     margin:50px auto;
-    padding:30px;
-    border-radius:10px;
+    padding:40px;
 }
 
 .fechar{
@@ -145,218 +149,192 @@ footer{
     cursor:pointer;
 }
 
-.modal h2{
-    color:#0f6d2c;
+.modal-box h2{
+    font-family:'Playfair Display',serif;
     margin-bottom:20px;
 }
 
-.modal p{
-    line-height:1.8;
+.modal-box p{
     margin-bottom:15px;
+    line-height:1.8;
+    text-align:justify;
 }
 
-blockquote{
-    border-left:5px solid #0f6d2c;
-    padding-left:15px;
-    font-style:italic;
-    margin:20px 0;
+@media(max-width:768px){
+
+    .manchete h2{
+        font-size:2rem;
+    }
+
+    .colunas{
+        column-count:1;
+    }
+
+    .grade{
+        grid-template-columns:1fr;
+    }
+
+    header h1{
+        font-size:2.5rem;
+    }
 }
 
 </style>
 </head>
 <body>
 
-<header>
-    <h1>CAJU NEWS</h1>
-    <p>Jornal Escolar da Turma 202</p>
-</header>
-
-<nav>
-    <a href="#">Início</a>
-    <a href="#">Notícias</a>
-    <a href="#">Sobre</a>
-</nav>
-
 <div class="container">
 
-    <!-- Manchete principal -->
+<header>
+    <h1>CAJU NEWS</h1>
+    <p>10 de Junho de 2026 • Jornal Escolar • Turma 202</p>
+</header>
 
-    <section class="destaque">
+<section class="editorial">
+    Somos os alunos da Turma 202 do Colégio Caldas Júnior e apresentamos
+    o jornal escolar Caju News, desenvolvido com apoio das pibidianas da PUCRS.
+</section>
 
-        <span class="tag">MANCHETE PRINCIPAL</span>
+<section class="manchete">
 
-        <h2>
-            Proposta para o fim da escala 6x1 avança na Câmara dos Deputados
-        </h2>
+    <div class="tag">MANCHETE PRINCIPAL</div>
+
+    <h2>
+        Proposta para o Fim da Escala 6x1 Avança na Câmara dos Deputados
+    </h2>
+
+    <p class="subtitulo">
+        Debate nacional mobiliza trabalhadores, empresários e parlamentares.
+    </p>
+
+    <div class="colunas">
 
         <p>
-            O Congresso Nacional discute uma PEC que pretende reduzir
-            a jornada semanal de trabalho de 44 para 40 horas sem
-            redução salarial.
+        O Congresso Nacional discute uma proposta que pretende reduzir
+        a jornada semanal de trabalho de 44 para 40 horas sem redução salarial.
+        A medida busca substituir a escala 6x1 por modelos com mais tempo
+        de descanso para os trabalhadores.
         </p>
 
         <p>
-            Trabalhadores defendem mais qualidade de vida,
-            enquanto representantes do setor produtivo alertam para
-            possíveis impactos econômicos.
+        Representantes dos trabalhadores defendem que a mudança pode melhorar
+        a qualidade de vida e aumentar o convívio familiar. Já setores empresariais
+        alertam para possíveis aumentos nos custos operacionais.
         </p>
 
-    </section>
+        <p>
+        O presidente da Câmara, Hugo Motta, considera a proposta viável desde
+        que haja diálogo entre empregadores e trabalhadores.
+        </p>
 
-    <!-- Cards -->
-
-    <div class="grid">
-
-        <div class="card" onclick="abrirNoticia('escala')">
-            <h3>Escala 6x1</h3>
-            <p>Clique para ler a matéria completa.</p>
-        </div>
-
-        <div class="card" onclick="abrirNoticia('quadras')">
-            <h3>Reforma das Quadras</h3>
-            <p>Clique para ler a matéria completa.</p>
-        </div>
-
-        <div class="card" onclick="abrirNoticia('copa')">
-            <h3>Copa do Mundo</h3>
-            <p>Clique para ler a matéria completa.</p>
-        </div>
-
-        <div class="card" onclick="abrirNoticia('fisiculturismo')">
-            <h3>Fisiculturismo</h3>
-            <p>Clique para ler a matéria completa.</p>
-        </div>
+        <p>
+        Empresas já realizam testes com escalas mais flexíveis, enquanto o
+        debate segue avançando no Congresso Nacional.
+        </p>
 
     </div>
+
+</section>
+
+<section class="grade">
+
+    <article class="materia" onclick="abrirNoticia('escala')">
+        <span>Trabalho</span>
+        <h3>Escala 6x1</h3>
+        <p>Leia a matéria completa sobre a proposta em debate.</p>
+    </article>
+
+    <article class="materia" onclick="abrirNoticia('quadras')">
+        <span>Escola</span>
+        <h3>Reforma das Quadras</h3>
+        <p>Melhorias previstas para os espaços esportivos.</p>
+    </article>
+
+    <article class="materia" onclick="abrirNoticia('copa')">
+        <span>Esporte</span>
+        <h3>Copa do Mundo</h3>
+        <p>Expectativas para a maior competição do futebol.</p>
+    </article>
+
+    <article class="materia" onclick="abrirNoticia('fisiculturismo')">
+        <span>Saúde</span>
+        <h3>Fisiculturismo</h3>
+        <p>Conheça mais sobre a modalidade esportiva.</p>
+    </article>
+
+</section>
+
+<footer>
+    CAJU NEWS • Colégio Caldas Júnior • Turma 202
+</footer>
 
 </div>
 
-<footer>
-    <h3>Caju News</h3>
-    <p>
-        Jornal desenvolvido pelos alunos da Turma 202 do Colégio Caldas Júnior.
-    </p>
-</footer>
-
-<!-- Modal -->
-
-<div id="modal" class="modal">
-
-    <div class="modal-conteudo">
+<div class="modal" id="modal">
+    <div class="modal-box">
 
         <span class="fechar" onclick="fecharNoticia()">&times;</span>
 
-        <div id="conteudoNoticia"></div>
+        <div id="conteudo"></div>
 
     </div>
-
 </div>
 
 <script>
 
 function abrirNoticia(tema){
 
-    const conteudo = document.getElementById("conteudoNoticia");
+    let texto = "";
 
     if(tema === "escala"){
 
-        conteudo.innerHTML = `
+        texto = `
         <h2>Fim da Escala 6x1 Avança na Câmara</h2>
 
         <p>
-        O debate sobre a extinção da jornada de seis dias de trabalho
-        por um de descanso ganha força no Congresso Nacional.
+        A proposta prevê a redução da jornada semanal de 44 para 40 horas
+        sem redução salarial.
         </p>
 
         <p>
-        A proposta prevê a redução da carga semanal de 44 para
-        40 horas sem redução salarial.
+        Segundo representantes do setor supermercadista, a mudança pode gerar
+        aumento nos custos operacionais das empresas.
         </p>
 
         <p>
-        Segundo Márcio Milan, vice-presidente da ABRAS,
-        supermercados alertam para possíveis aumentos nos custos
-        operacionais caso a mudança seja aprovada.
+        Trabalhadores e parlamentares defendem que a medida proporciona mais
+        qualidade de vida e equilíbrio entre trabalho e descanso.
         </p>
 
         <p>
-        Apesar disso, empresas já realizam testes com escalas 5x2
-        para avaliar os impactos da alteração.
-        </p>
-
-        <p>
-        O presidente da Câmara, Hugo Motta, considera a proposta
-        viável desde que exista diálogo entre trabalhadores e empregadores.
-        </p>
-
-        <p>
-        O ministro do Trabalho, Luiz Marinho, também defende a mudança,
-        destacando redução de faltas e melhora na contratação
-        em empresas que já adotaram jornadas mais flexíveis.
-        </p>
-
-        <blockquote>
-        “É fundamental que a jornada 6x1 seja extinta em breve no Brasil.”
-        </blockquote>
-
-        <p>
-        Para ser aprovada, a PEC precisará de 308 votos favoráveis
+        Para ser aprovada, a PEC precisará reunir 308 votos favoráveis
         na Câmara dos Deputados.
         </p>
         `;
     }
 
     if(tema === "quadras"){
-
-        conteudo.innerHTML = `
+        texto = `
         <h2>Reforma das Quadras Externas</h2>
-
-        <p>
-        A comunidade escolar acompanha as melhorias previstas para
-        as quadras externas do colégio.
-        </p>
-
-        <p>
-        O objetivo é proporcionar mais segurança, conforto e qualidade
-        para as atividades esportivas dos estudantes.
-        </p>
+        <p>A comunidade escolar acompanha as melhorias previstas para as quadras da escola.</p>
         `;
     }
 
     if(tema === "copa"){
-
-        conteudo.innerHTML = `
+        texto = `
         <h2>Copa do Mundo</h2>
-
-        <p>
-        A Copa do Mundo continua sendo um dos maiores eventos esportivos
-        do planeta.
-        </p>
-
-        <p>
-        Alunos compartilham expectativas sobre seleções favoritas,
-        jogadores em destaque e possíveis campeões.
-        </p>
+        <p>O torneio segue sendo um dos maiores eventos esportivos do planeta.</p>
         `;
     }
 
     if(tema === "fisiculturismo"){
-
-        conteudo.innerHTML = `
+        texto = `
         <h2>Fisiculturismo</h2>
-
-        <p>
-        O fisiculturismo é um esporte que exige disciplina,
-        alimentação adequada e treinamento constante.
-        </p>
-
-        <p>
-        Nos últimos anos a modalidade tem conquistado cada vez mais
-        praticantes e admiradores.
-        </p>
+        <p>Modalidade que exige disciplina, treinamento e dedicação constante.</p>
         `;
     }
 
+    document.getElementById("conteudo").innerHTML = texto;
     document.getElementById("modal").style.display = "block";
 }
 
@@ -364,12 +342,9 @@ function fecharNoticia(){
     document.getElementById("modal").style.display = "none";
 }
 
-window.onclick = function(event){
-
-    const modal = document.getElementById("modal");
-
-    if(event.target === modal){
-        modal.style.display = "none";
+window.onclick = function(e){
+    if(e.target.id === "modal"){
+        fecharNoticia();
     }
 }
 
